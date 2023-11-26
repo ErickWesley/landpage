@@ -1,23 +1,28 @@
 package tumnus.landpage.domain.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import jakarta.validation.constraints.NotEmpty;
+import lombok.*;
 
-@Entity
-@Table(name = "usuario")
 @Getter
 @Setter
+@Entity
+@Builder
+@ToString
+@Table(name = "usuario")
+@AllArgsConstructor
+@NoArgsConstructor
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "nome")
+    /*@NotEmpty(message = "Campo nome é obrigatório.")*/
     private String name;
-    @Column(name = "email")
+    @Column(name = "email", unique = true)
     private String email;
-    @Column(name = "cpf")
+    @Column(name = "cpf", unique = true)
     private String cpf;
 
 

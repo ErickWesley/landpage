@@ -5,7 +5,6 @@ services:
     image: postgres:alpine
     restart: always
     environment:
-      POSTGRES_USER: postgre
       POSTGRES_PASSWORD: postgre
       POSTGRES_DB: landpage_db
     ports:

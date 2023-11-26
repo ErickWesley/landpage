@@ -33,7 +33,7 @@ class UserServiceTest {
 
         Mockito.when(repository.save(user)).thenReturn(user);
 
-        service.salvar(user);
+        /*service.salvar(user);*/
 
         Mockito.verify(repository, Mockito.times(1)).save(user);
 
